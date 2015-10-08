@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "jshint . --exclude node_modules"
+    "test": "gulp lint"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,10 @@
     "cfenv": "*"
   },
   "devDependencies": {
-    "jshint": "*"
+    "jshint": "*",
+    "gulp": "*",
+    "gulp-jshint": "*",
+    "jshint-stylish": "*",
+    "colors": "*"
   }
 }
