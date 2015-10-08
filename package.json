@@ -18,5 +18,19 @@
   ],
   "author": "Romain Barissat",
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/olivrcom/olivr-api#readme"
+  "homepage": "https://bitbucket.org/olivrcom/olivr-api#readme",
+
+  "engines": {
+    "node": "4.1.2"
+  },
+
+  "dependencies": {
+    "good": "*",
+    "good-console": "*",
+    "hapi": "*",
+    "hapi-swagger": "*",
+    "joi": "*",
+    "mongoose": "*",   
+    "cfenv": "*"
+  }
 }
