@@ -3,6 +3,7 @@
 var Hapi            = require('hapi'),
     Inert           = require('inert'),
     Vision          = require('vision'),
+    Joi             = require('joi'),
     HapiSwagger     = require('hapi-swagger'),
     Pack            = require('./package'),
     CFEnv           = require('cfenv');
@@ -11,7 +12,7 @@ var Hapi            = require('hapi'),
 var server = new Hapi.Server();
 
 // Define PORT number
-server.connection({port: 7002});
+server.connection({host: 'localhost', port: 7002});
 
 // Define Swagger options
 var swaggerOptions = {
@@ -33,6 +34,7 @@ server.register([
         }
     }
 );
+
 
 // =============== Routes for our API =======================
 // Define GET route
@@ -68,8 +70,28 @@ server.route({
     }
 });
 
+server.route({
+    method: 'GET',
+    path: '/hello/{yourname*}',
+    config: {
+        tags: ['api'],
+        description: 'Say hello',
+        notes: 'Say hello to someone',
+        validate: {
+            params: {
+                yourname: Joi.string().max(40).min(2).alphanum()
+            }
+        },
+        handler: function (req,reply) {
+            reply({message: 'Hello '+ req.params.yourname + '!'})
+        }
+    }
+});
+
 // =============== Start our Server =======================
 // Lets start the server
 server.start(function () {
     console.log('Server running at:', server.info.uri);
 });
+
+module.exports = server;
