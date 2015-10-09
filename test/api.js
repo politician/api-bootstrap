@@ -12,7 +12,7 @@ lab.experiment("API Tests", function() {
         };
         // server.inject lets you similate an http request
         server.inject(options, function(response) {
-            Code.expect(response.statusCode).to.equal(200);  //  Expect http response status code to be 200 ("Ok")
+            Code.expect(response.statusCode).to.equal(200); //  Expect http response status code to be 200 ("Ok")
             done();
         });
     });
