@@ -83,9 +83,17 @@ server.route({
             }
         },
         handler: function (req,reply) {
-            reply({message: 'Hello '+ req.params.yourname + '!'})
+            reply({message: 'Bonjour '+ req.params.yourname + '!'});
         }
     }
+});
+
+server.route({
+ method: 'GET',
+ path: '/{path*}',
+ handler: {
+  directory: { path: './static', listing: true, index: true }
+ }
 });
 
 // =============== Start our Server =======================
