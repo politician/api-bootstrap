@@ -17,7 +17,7 @@ gulp.task('test-lint', function() {
 
 gulp.task('lab', function() {
   return gulp.src('./test')
-    .pipe(lab('-v -l -C'));
+    .pipe(lab('-v -l -C -p -t 50'));
 });
 
 gulp.task('start', function () {
