@@ -1,6 +1,7 @@
+sudo: false
 language: node_js
 node_js:
-- 4.1.2
+  - 4.1.2
 deploy:
   provider: heroku
   api_key:
@@ -8,3 +9,6 @@ deploy:
   app: bootstrap-api
   on:
     repo: OlivrCom/bootstrap-api
+cache:
+  directories:
+    - node_modules
