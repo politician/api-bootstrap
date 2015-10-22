@@ -18,7 +18,7 @@
     "hapi"
   ],
   "author": "Romain Barissat",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "homepage": "https://github.com/OlivrCom/bootstrap-api#readme",
 
   "engines": {
