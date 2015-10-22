@@ -21,8 +21,9 @@ Features
    - Documentation: [Swagger](http://swagger.io/)
 
 
-Dev [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+Dev
 ===
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
 Run `gulp`, it will automatically test, lint and start your API, watching any modification and re-linting/starting with nodemon.
 
@@ -37,8 +38,9 @@ It sets the environment variable `NODE_ENV=dev`
 You can checkout your API on [http://localhost:3000](http://localhost:3000) and see its documentation on [http://localhost:3000/documentation](http://localhost:3000/documentation)
 
 
-Test [![Build Status](https://api.travis-ci.org/OlivrCom/bootstrap-api.svg)](https://travis-ci.org/OlivrCom/bootstrap-api)
+Test
 ====
+[![Build Status](https://api.travis-ci.org/OlivrCom/bootstrap-api.svg)](https://travis-ci.org/OlivrCom/bootstrap-api) [![Code Climate](https://codeclimate.com/github/OlivrCom/bootstrap-api/badges/gpa.svg)](https://codeclimate.com/github/OlivrCom/bootstrap-api) [![Test Coverage](https://codeclimate.com/github/OlivrCom/bootstrap-api/badges/coverage.svg)](https://codeclimate.com/github/OlivrCom/bootstrap-api/coverage)
 
 It is compatible with [Travis](https://travis-ci.org).
 
@@ -53,8 +55,9 @@ It sets the environment variable `NODE_ENV=test`
 Prod
 ====
 
-Heroku [![Deployment Status](http://heroku-badge.herokuapp.com/?app=bootstrap-api&style=flat&root=documentation)](https://bootstrap-api.herokuapp.com/documentation)
----------
+Heroku 
+------
+[![Deployment Status](http://heroku-badge.herokuapp.com/?app=bootstrap-api&style=flat&root=documentation)](https://bootstrap-api.herokuapp.com/documentation)
 
 It is compatible with [Heroku](http://keroku.com) through the [Heroku/Travis integration](http://docs.travis-ci.com/user/deployment/heroku/).
 
