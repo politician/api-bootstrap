@@ -21,7 +21,7 @@ Features
    - Documentation: [Swagger](http://swagger.io/)
 
 
-Dev
+Dev [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 ===
 
 Run `gulp`, it will automatically test, lint and start your API, watching any modification and re-linting/starting with nodemon.
