@@ -60,6 +60,7 @@ This API is compatible with [Code Climate](https://codeclimate.com) through the 
 
 > 1. Add this repo to Code Climate and get the repo token
 > 2. Edit the `addons.code_climate.repo_token` in [.travis.yml](.travis.yml)
+> Tip: Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) your token with `travis encrypt <token> --add addons.code_climate.repo_token`
 
 Prod
 ====
@@ -79,12 +80,13 @@ This API is compatible with [Heroku](http://keroku.com) through the [Travis/Hero
 
 > 1. Change your `deploy.app` name
 > 2. Change your [encrypted](http://docs.travis-ci.com/user/encryption-keys/) `deploy.api_key`
+> Tip: Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) your key with `travis encrypt <api key> --add deploy.api_key`
 
 > Push to GitHub:
 
 > 1. Watch the build in Travis
 > 2. Watch the deployment in Heroku
-> 3. Your API is now available on `https://<YOUR APP NAME>.herokuapp.com/documentation`
+> 3. Your API is now available on `https://<app name>.herokuapp.com/documentation`
 
 New Relic monitoring
 --------------------
@@ -93,7 +95,7 @@ This API is compatible with [New Relic](http://newrelic.com) through the [Heroku
 
 > 1. [Add the New Relic element](https://elements.heroku.com/addons/newrelic) to your app
 > 2. Edit the `app_name` in [newrelic.js](newrelic.js) with your heroku app name (recommended but could be any name)
-> 3. Edit the `logging.level` in [newrelic.js](newrelic.js) to suit your desired logging level
+> 3. Edit the `logging.level` in [newrelic.js](newrelic.js) to suit [your desired logging level](https://github.com/trentm/node-bunyan#levels)
 
 ----------
 
