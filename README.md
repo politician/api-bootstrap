@@ -1,24 +1,24 @@
 About
 =====
 
-We use this bootstrap API at [Olivr](http://olivr.com) to create NodeJS based micro-services.
+At [Olivr](http://olivr.com), we Bootstrap our API's using this repo to create NodeJS based micro-services.
 
-It is licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License), so feel free to use it for any project and of course please raise issues/pull requests if you have problems.
+It is licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License), so feel free to use it for any project and of course please feel free to raise issues and contribute through pull requests. 
 
-[Demo](https://bootstrap-api.herokuapp.com/documentation) (hosted on heroku free plan - available 18h/day - first load takes a minute)
+[Demo](https://bootstrap-api.herokuapp.com/documentation) (hosted on heroku free plan - available 18h/day)
 
 
 Features
-=======
+========
 
  - Server: [NodeJS](https://nodejs.org)
- - Linting: [Standard](http://standardjs.com/)
- - Task Management: [Gulp](http://gulpjs.com/)
+ - Linting: [Standard](http://standardjs.com)
+ - Task Management: [Gulp](http://gulpjs.com)
  - API:
-   - Framework: [Hapi](http://hapijs.com/)
+   - Framework: [Hapi](http://hapijs.com)
    - Testing: [Lab](https://github.com/hapijs/lab), [Code](https://github.com/hapijs/code)
    - Validation: [Joi](https://github.com/hapijs/joi)
-   - Documentation: [Swagger](http://swagger.io/)
+   - Documentation: [Swagger](http://swagger.io)
 
 
 Dev
@@ -27,7 +27,7 @@ Dev
 
 Run `gulp`, it will automatically test, lint and start your API, watching any modification and re-linting/starting with nodemon.
 
-It sets the environment variable `NODE_ENV=dev`
+Gulp sets the environment variable `NODE_ENV=dev`
 
 > Use [TDD](https://en.wikipedia.org/wiki/Test-driven_development):
 
@@ -35,31 +35,39 @@ It sets the environment variable `NODE_ENV=dev`
 > 2. Add your endpoint in `./lib/api.js`
 > 3. Run `gulp`
 
-You can checkout your API on [http://localhost:3000](http://localhost:3000) and see its documentation on [http://localhost:3000/documentation](http://localhost:3000/documentation)
+You can see your API on [http://localhost:3000](http://localhost:3000) and see its documentation on [http://localhost:3000/documentation](http://localhost:3000/documentation)
 
 
 Test
 ====
-[![Build Status](https://api.travis-ci.org/OlivrCom/bootstrap-api.svg)](https://travis-ci.org/OlivrCom/bootstrap-api) [![Code Climate](https://codeclimate.com/github/OlivrCom/bootstrap-api/badges/gpa.svg)](https://codeclimate.com/github/OlivrCom/bootstrap-api) [![Test Coverage](https://codeclimate.com/github/OlivrCom/bootstrap-api/badges/coverage.svg)](https://codeclimate.com/github/OlivrCom/bootstrap-api/coverage)
 
-It is compatible with [Travis](https://travis-ci.org).
+Travis CI [![Build Status](https://api.travis-ci.org/OlivrCom/bootstrap-api.svg)](https://travis-ci.org/OlivrCom/bootstrap-api)
+---------
+
+This API is compatible with [Travis](https://travis-ci.org).
 
 It sets the environment variable `NODE_ENV=test`
 
 > Add this repo (which you most likely forked already):
 
-> 1. [Sync Travis with your Github account](https://travis-ci.org/profile) and add this repo.
+> 1. [Sync Travis with your Github account](https://travis-ci.org/profile) and add this repo
 > 2. Push your repo (if you didn't change/remove the [`deploy`](.travis.yml#L7) part, it will fail at deployment)
 
+Code Climate [![Code Climate](https://codeclimate.com/github/OlivrCom/bootstrap-api/badges/gpa.svg)](https://codeclimate.com/github/OlivrCom/bootstrap-api) [![Test Coverage](https://codeclimate.com/github/OlivrCom/bootstrap-api/badges/coverage.svg)](https://codeclimate.com/github/OlivrCom/bootstrap-api/coverage)
+------------
+
+This API is compatible with [Code Climate](https://codeclimate.com) through the [Travis/Code Climate integration](http://docs.travis-ci.com/user/code-climate/)
+
+> 1. Add this repo to Code Climate and get the repo token
+> 2. Edit the `addons.code_climate.repo_token` in [.travis.yml](.travis.yml)
 
 Prod
 ====
 
-Heroku 
-------
-[![Deployment Status](http://heroku-badge.herokuapp.com/?app=bootstrap-api&style=flat&root=documentation)](https://bootstrap-api.herokuapp.com/documentation)
+Heroku hosting [![Deployment Status](http://heroku-badge.herokuapp.com/?app=bootstrap-api&style=flat&root=documentation)](https://bootstrap-api.herokuapp.com/documentation)
+--------------
 
-It is compatible with [Heroku](http://keroku.com) through the [Heroku/Travis integration](http://docs.travis-ci.com/user/deployment/heroku/).
+This API is compatible with [Heroku](http://keroku.com) through the [Travis/Heroku integration](http://docs.travis-ci.com/user/deployment/heroku/).
 
 > Create your app on Heroku:
 
@@ -72,6 +80,21 @@ It is compatible with [Heroku](http://keroku.com) through the [Heroku/Travis int
 > 1. Change your `deploy.app` name
 > 2. Change your [encrypted](http://docs.travis-ci.com/user/encryption-keys/) `deploy.api_key`
 
+> Push to GitHub:
 
-> Push your app:
-> It is now available on `https://<YOUR APP NAME>.herokuapp.com`
+> 1. Watch the build in Travis
+> 2. Watch the deployment in Heroku
+> 3. Your API is now available on `https://<YOUR APP NAME>.herokuapp.com/documentation`
+
+New Relic monitoring
+--------------------
+
+This API is compatible with [New Relic](http://newrelic.com) through the [Heroku/New Relic integration](https://docs.newrelic.com/docs/agents/nodejs-agent/hosting-services/nodejs-agent-heroku)
+
+> 1. [Add the New Relic element](https://elements.heroku.com/addons/newrelic) to your app
+> 2. Edit the `app_name` in [newrelic.js](newrelic.js) with your heroku app name (recommended but could be any name)
+> 3. Edit the `logging.level` in [newrelic.js](newrelic.js) to suit your desired logging level
+
+----------
+
+*Original credits to: [OlivrCom/bootstrap-api](https://github.com/OlivrCom/bootstrap-api)*
