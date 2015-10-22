@@ -1,11 +1,11 @@
 {
   "name": "api-bootstrap",
   "version": "0.0.1",
-  "description": "API bootstrap used for olivr microservices",
+  "description": "API bootstrap used for olivr micro-services",
   "main": "lib/api.js",
   "scripts": {
     "start": "node lib/api.js",
-    "test": "lab -v -l -C"
+    "test": "lab -v -l -C && lab -r lcov > lcov.info"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   "author": "Romain Barissat",
   "license": "MIT",
   "homepage": "https://github.com/OlivrCom/bootstrap-api#readme",
-
+  "bugs": "https://github.com/OlivrCom/bootstrap-api/issues",
   "engines": {
     "node": "4.2.1"
   },

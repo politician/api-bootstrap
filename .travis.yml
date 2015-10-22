@@ -4,6 +4,9 @@ node_js:
   - 4.2.1
 before_script:
   - npm install -g lab
+  - npm install -g codeclimate-test-reporter
+after_script:
+  - codeclimate-test-reporter < lcov.info
 deploy:
   provider: heroku
   api_key:
@@ -16,3 +19,6 @@ cache:
     - node_modules
 env:
   - NODE_ENV=test
+addons:
+  code_climate:
+    repo_token: 63f92d8e5dd0301e5efd5b4e3b174b406615b1969a4f697b3b951912adc5d817
