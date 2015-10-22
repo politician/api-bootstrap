@@ -2,14 +2,14 @@
   "name": "olivr-api",
   "version": "0.0.1",
   "description": "API for Olivr",
-  "main": "app.js",
+  "main": "lib/api.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node lib/api.js",
     "test": "lab -v -l -C"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/olivrcom/olivr-api.git"
+    "url": "git+ssh://github.com/OlivrCom/bootstrap-api.git"
   },
   "keywords": [
     "personal",
@@ -19,7 +19,7 @@
   ],
   "author": "Romain Barissat",
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/olivrcom/olivr-api#readme",
+  "homepage": "https://github.com/OlivrCom/bootstrap-api#readme",
 
   "engines": {
     "node": "4.1.2"
@@ -46,6 +46,10 @@
     "lab": "*",
     "gulp-lab": "*",
     "nodemon": "*",
+    "standard": "*",
+    "gulp-standard": "*",
+    "gulp-any-standard": "*",
+    "stylish": "*",
     "gulp-nodemon": "*"
   }
 }

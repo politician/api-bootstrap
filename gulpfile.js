@@ -1,32 +1,29 @@
-var gulp   		= require('gulp'),
-	jshint 		= require('gulp-jshint'),
-	lab 		= require('gulp-lab'),
-	nodemon 	= require('gulp-nodemon');
- 
-gulp.task('lib-lint', function() {
-  return gulp.src('./*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
-});
+var gulp = require('gulp')
+var lab = require('gulp-lab')
+var nodemon = require('gulp-nodemon')
+var standard = require('gulp-standard')
 
-gulp.task('test-lint', function() {
-  return gulp.src('./test/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
-});
+gulp.task('lint', function () {
+  return gulp.src(['./test/*.js', './lib/*.js', './*.js'])
+    .pipe(standard())
+    .pipe(standard.reporter('default', {
+      breakOnError: true
+    }))
+})
 
-gulp.task('lab', function() {
+gulp.task('lab', function () {
   return gulp.src('./test')
-    .pipe(lab('-v -l -C -p -t 50'));
-});
+    .pipe(lab('-v -l -C -p -t 50'))
+})
 
 gulp.task('start', function () {
   nodemon({
-  	script : './app.js',
-  	ext : 'js'
-  });
-});
+    script: './lib/api.js',
+    ext: 'js',
+    env: { 'NODE_ENV': 'dev' },
+    tasks: ['lint']
+  })
+})
 
-gulp.task('lint', ['lib-lint', 'test-lint']);
-gulp.task('test', ['lint', 'lab']);
-gulp.task('default', ['test', 'start']);
+gulp.task('test', ['lint', 'lab'])
+gulp.task('default', ['test', 'start'])
