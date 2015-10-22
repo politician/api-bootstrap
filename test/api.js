@@ -1,3 +1,4 @@
+require('newrelic')
 var Lab = require('lab')
 var Code = require('code')
 var server = require('../lib/api.js')

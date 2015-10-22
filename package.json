@@ -32,7 +32,8 @@
     "hapi-swagger": "*",
     "joi": "*",
     "inert": "*",
-    "vision": "*"
+    "vision": "*",
+    "newrelic": "*"
   },
   "devDependencies": {
     "gulp": "*",
