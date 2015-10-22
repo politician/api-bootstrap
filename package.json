@@ -12,10 +12,10 @@
     "url": "git+ssh://github.com/OlivrCom/bootstrap-api.git"
   },
   "keywords": [
-    "personal",
-    "data",
-    "protection",
-    "source"
+    "bootstrap",
+    "api",
+    "microservice",
+    "hapi"
   ],
   "author": "Romain Barissat",
   "license": "UNLICENSED",
@@ -32,15 +32,10 @@
     "hapi-swagger": "*",
     "joi": "*",
     "inert": "*",
-    "vision": "*",
-    "mongoose": "*",   
-    "cfenv": "*"
+    "vision": "*"
   },
   "devDependencies": {
-    "jshint": "*",
     "gulp": "*",
-    "gulp-jshint": "*",
-    "jshint-stylish": "*",
     "colors": "*",
     "code": "*",
     "lab": "*",
@@ -48,8 +43,6 @@
     "nodemon": "*",
     "standard": "*",
     "gulp-standard": "*",
-    "gulp-any-standard": "*",
-    "stylish": "*",
     "gulp-nodemon": "*"
   }
 }
