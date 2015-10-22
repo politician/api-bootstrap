@@ -1,7 +1,11 @@
 About
 =====
-This bootstrap API is used to create NodeJS based micro-services in [Olivr](http://olivr.com).
-It is licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License), so feel free to use it for any project and of course please raise issues/pull requests if you have problems. 
+
+We use this bootstrap API at [Olivr](http://olivr.com) to create NodeJS based micro-services.
+
+It is licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License), so feel free to use it for any project and of course please raise issues/pull requests if you have problems.
+
+[Demo](https://bootstrap-api.herokuapp.com/documentation) (hosted on heroku free plan - available 18h/day - first load takes a minute)
 
 
 Features
@@ -21,6 +25,7 @@ Dev
 ===
 
 Run `gulp`, it will automatically test, lint and start your API, watching any modification and re-linting/starting with nodemon.
+
 It sets the environment variable `NODE_ENV=dev`
 
 > Use [TDD](https://en.wikipedia.org/wiki/Test-driven_development):
@@ -29,14 +34,14 @@ It sets the environment variable `NODE_ENV=dev`
 > 2. Add your endpoint in `./lib/api.js`
 > 3. Run `gulp`
 
-You can checkout your API on http://localhost:3000
-You can checkout the doc for your API on http://localhost:3000/documentation
+You can checkout your API on [http://localhost:3000](http://localhost:3000) and see its documentation on [http://localhost:3000/documentation](http://localhost:3000/documentation)
 
 
 Test [![Build Status](https://api.travis-ci.org/OlivrCom/bootstrap-api.svg)](https://travis-ci.org/OlivrCom/bootstrap-api)
 ====
 
 It is compatible with [Travis](https://travis-ci.org).
+
 It sets the environment variable `NODE_ENV=test`
 
 > Add this repo (which you most likely forked already):
