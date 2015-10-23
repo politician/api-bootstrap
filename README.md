@@ -41,7 +41,7 @@ You can see your API on [http://localhost:3000](http://localhost:3000) and see i
 Test
 ====
 
-Travis CI [![Build Status](https://api.travis-ci.org/OlivrCom/bootstrap-api.svg)](https://travis-ci.org/OlivrCom/bootstrap-api)
+Travis CI [![Build Status](https://api.travis-ci.org/iRomain/bootstrap-api.svg)](https://travis-ci.org/iRomain/bootstrap-api)
 ---------
 
 This API is compatible with [Travis](https://travis-ci.org).
@@ -53,7 +53,7 @@ It sets the environment variable `NODE_ENV=test`
 > 1. [Sync Travis with your Github account](https://travis-ci.org/profile) and add this repo
 > 2. Push your repo (if you didn't change/remove the [`deploy`](.travis.yml#L7) part, it will fail at deployment)
 
-Code Climate [![Code Climate](https://codeclimate.com/github/OlivrCom/bootstrap-api/badges/gpa.svg)](https://codeclimate.com/github/OlivrCom/bootstrap-api) [![Test Coverage](https://codeclimate.com/github/OlivrCom/bootstrap-api/badges/coverage.svg)](https://codeclimate.com/github/OlivrCom/bootstrap-api/coverage)
+Code Climate [![Code Climate](https://codeclimate.com/github/iRomain/bootstrap-api/badges/gpa.svg)](https://codeclimate.com/github/iRomain/bootstrap-api) [![Test Coverage](https://codeclimate.com/github/iRomain/bootstrap-api/badges/coverage.svg)](https://codeclimate.com/github/iRomain/bootstrap-api/coverage)
 ------------
 
 This API is compatible with [Code Climate](https://codeclimate.com) through the [Travis/Code Climate integration](http://docs.travis-ci.com/user/code-climate/)
@@ -99,4 +99,4 @@ This API is compatible with [New Relic](http://newrelic.com) through the [Heroku
 
 ----------
 
-*Original credits to: [OlivrCom/bootstrap-api](https://github.com/OlivrCom/bootstrap-api)*
+*Original credits to: [iRomain/bootstrap-api](https://github.com/iRomain/bootstrap-api)*
