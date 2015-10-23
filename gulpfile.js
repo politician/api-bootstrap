@@ -4,7 +4,7 @@ var nodemon = require('gulp-nodemon')
 var standard = require('gulp-standard')
 
 gulp.task('lint', function () {
-  return gulp.src(['./test/*.js', './lib/*.js', './*.js'])
+  return gulp.src(['./test/*.js', './api/*.js', './*.js'])
     .pipe(standard())
     .pipe(standard.reporter('default', {
       breakOnError: true
@@ -18,7 +18,7 @@ gulp.task('lab', function () {
 
 gulp.task('start', function () {
   nodemon({
-    script: './lib/api.js',
+    script: './api.js',
     ext: 'js',
     env: { 'NODE_ENV': 'dev' },
     tasks: ['lint']

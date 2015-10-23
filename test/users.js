@@ -1,14 +1,14 @@
 var Lab = require('lab')
 var Code = require('code')
-var server = require('../lib/api.js')
+var server = require('../api.js')
 var lab = exports.lab = Lab.script()
 
 lab.experiment('API Tests', function () {
   // tests
-  lab.test('GET /api/user', function (done) {
+  lab.test('GET /api/users', function (done) {
     var options = {
       method: 'GET',
-      url: '/api/user'
+      url: '/api/users'
     }
     // server.inject lets you similate an http request
     server.inject(options, function (response) {
