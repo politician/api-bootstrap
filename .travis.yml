@@ -1,25 +1,30 @@
 sudo: false
 language: node_js
 node_js:
-- 4.2.1
+  - 4.2.1
+before_install:
+  - pip install codecov
 before_script:
-- npm install -g lab
-- npm install -g codeclimate-test-reporter
+  - npm install -g lab
+  - npm install -g codeclimate-test-reporter
 after_script:
-- codeclimate-test-reporter < lcov.info
+  - codeclimate-test-reporter < lcov.info
 deploy:
-- provider: heroku
-  api_key:
-    secure: nKrNGlvXdCAVBaIFkkajRaAx9XnQrtAwvnOX6DwNdLe2ic0ZJl8/QPt54nt7WX1+8ik/yRtmRswzc5XxIDCob3s7f2tjTfjE9xXYocB9LkahwV5VH2omnW1FwdCOJbkWiuzb3F+ffJfExNrltjWeWKHplQ3RSvSLpNQe48iYa5bppQZtFaAJQRT2k4fLu2oS5T7Bx0FI+e5FTFVLRMXqMk3OBTV4xK4A0Q9VPqNLc31yIJH1o+LEYisbbFqIdL1E4v/JhvjYVKPknqru3Hkg6cwpVnOyDMHCaGd8MZw7bKTD8xI/u+8C8KTCXq2LAx3oTi+jpPq68fjRRrHQl6vrdAYEjB90iEWJjqDx33yjMFawggQOewwZ88IaYli1AQHtwIlG6i1NJ4wWJz4OxXtycVC3U8bxhRNHCMfDbDqrxEDO1VBm3JRaOEEPQ1gJMB0ODr3EIgCHdCvwA6FHBHrSy+WP2+eXGJ0cuVY/51aUpIjdyrLuK31yZezW48HjUctmT31nmmUexPzPu5sqX1qJf/17+GRQ7BuoFAlz7v6OfrsnwFLnSdS9fz9ejD39NOzq4OoB+DyiudRd2wzn6a3DQbwu8G6q2+u5O3ZP6ubL1CwilkX43HjLWjCB7joEb3Mjv2GX4LBStM+iPvRSlEwbO1H3AEP+aZPHcs7AVGVe0QE=
-  app: api-bootstrap
-  on:
-    repo: iRomain/api-bootstrap
+  - provider: heroku
+    api_key:
+      secure: nKrNGlvXdCAVBaIFkkajRaAx9XnQrtAwvnOX6DwNdLe2ic0ZJl8/QPt54nt7WX1+8ik/yRtmRswzc5XxIDCob3s7f2tjTfjE9xXYocB9LkahwV5VH2omnW1FwdCOJbkWiuzb3F+ffJfExNrltjWeWKHplQ3RSvSLpNQe48iYa5bppQZtFaAJQRT2k4fLu2oS5T7Bx0FI+e5FTFVLRMXqMk3OBTV4xK4A0Q9VPqNLc31yIJH1o+LEYisbbFqIdL1E4v/JhvjYVKPknqru3Hkg6cwpVnOyDMHCaGd8MZw7bKTD8xI/u+8C8KTCXq2LAx3oTi+jpPq68fjRRrHQl6vrdAYEjB90iEWJjqDx33yjMFawggQOewwZ88IaYli1AQHtwIlG6i1NJ4wWJz4OxXtycVC3U8bxhRNHCMfDbDqrxEDO1VBm3JRaOEEPQ1gJMB0ODr3EIgCHdCvwA6FHBHrSy+WP2+eXGJ0cuVY/51aUpIjdyrLuK31yZezW48HjUctmT31nmmUexPzPu5sqX1qJf/17+GRQ7BuoFAlz7v6OfrsnwFLnSdS9fz9ejD39NOzq4OoB+DyiudRd2wzn6a3DQbwu8G6q2+u5O3ZP6ubL1CwilkX43HjLWjCB7joEb3Mjv2GX4LBStM+iPvRSlEwbO1H3AEP+aZPHcs7AVGVe0QE=
+    app: api-bootstrap
+    on:
+      repo: iRomain/api-bootstrap
 cache:
   directories:
-  - node_modules
+    - node_modules
 env:
-- NODE_ENV=test
+  - NODE_ENV=test
 addons:
   code_climate:
     repo_token:
       secure: G/8d392Ccqby6+lf5gJx+z0EKTvSriMr3HnVkxJWwq4tH3w0/iQCslA7mF7ij1xyFUY7V4tT8CDQoP90wiwRNZwM4/jBpwojAR4wM1RVtdcjcoI638F6F7nGdaqYSHg8DVLUHYJKGToSUEd7qNw5NiEkt9Di4n+LA0egyactqfcxfbNM0npXih22OK1swsQ3r8cYznHRDKXyYAcPKI81xaqtaxC+a+pYynIokLYwPyJiEB9e2AmOoZBN4BA6lzag9xKJ7r7wA9G3KRJ69RGXO4J3sAwFPNiOcUSCURyWRbo/STvV84cSD4H283fTvy3yyFxxQQuxQMyJx9ClzpHiA10KB2iM0gwWhzAd4J4hYThtbHL/+1Gdp0UaSypY2sRa0F7haUsD/XptAVK20Jp7B9olZD7vp4H2wRneVYDwhZrvmp1R3K2mlNe7ogNi0Y01rIX3bCCX7v1C+d0XhD5mGJUDxBTkpneG9Q7U34N9hydCIqIL2BxAw0QCidp+2SICOVqWpCVtxqXtSt9otnb3/cCgTP6loqFUtCepFUBPpyiVSTWUr3Kll2M+doc+qpNIyOpajmDdu00fvH2w+t9WfF1e5/5jxrsaCvr6WxDB/G4UIY4PUsjyPaiVZ2yGaOS4H4kourIRaFQbrcuf6HFqhGb9oJytYinrG68g1SvkXTQ=
+
+after_success:
+  - codecov
