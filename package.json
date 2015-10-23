@@ -1,5 +1,5 @@
 {
-  "name": "bootstrap-api",
+  "name": "api-bootstrap",
   "version": "0.0.1",
   "description": "API bootstrap used for my micro-services",
   "main": "api.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://github.com/iRomain/bootstrap-api.git"
+    "url": "git+ssh://github.com/iRomain/api-bootstrap.git"
   },
   "keywords": [
     "bootstrap",
@@ -19,8 +19,8 @@
   ],
   "author": "Romain Barissat",
   "license": "MIT",
-  "homepage": "https://github.com/iRomain/bootstrap-api#readme",
-  "bugs": "https://github.com/iRomain/bootstrap-api/issues",
+  "homepage": "https://github.com/iRomain/api-bootstrap#readme",
+  "bugs": "https://github.com/iRomain/api-bootstrap/issues",
   "engines": {
     "node": "4.2.1"
   },
