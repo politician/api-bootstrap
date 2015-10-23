@@ -1,7 +1,7 @@
 About
 =====
 
-At [Olivr](http://olivr.com), we Bootstrap our API's using this repo to create NodeJS based micro-services.
+I bootstrap my API's using this repo to create NodeJS based micro-services.
 
 It is licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License), so feel free to use it for any project and of course please feel free to raise issues and contribute through pull requests. 
 
