@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['bootstrap-api'],
+  app_name: ['api-bootstrap'],
   /**
    * Your New Relic license key.
    */
