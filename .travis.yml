@@ -2,8 +2,6 @@ sudo: false
 language: node_js
 node_js:
   - 4.2.1
-before_install:
-  - pip install codecov
 before_script:
   - npm install -g lab
   - npm install -g codeclimate-test-reporter
@@ -25,6 +23,3 @@ addons:
   code_climate:
     repo_token:
       secure: G/8d392Ccqby6+lf5gJx+z0EKTvSriMr3HnVkxJWwq4tH3w0/iQCslA7mF7ij1xyFUY7V4tT8CDQoP90wiwRNZwM4/jBpwojAR4wM1RVtdcjcoI638F6F7nGdaqYSHg8DVLUHYJKGToSUEd7qNw5NiEkt9Di4n+LA0egyactqfcxfbNM0npXih22OK1swsQ3r8cYznHRDKXyYAcPKI81xaqtaxC+a+pYynIokLYwPyJiEB9e2AmOoZBN4BA6lzag9xKJ7r7wA9G3KRJ69RGXO4J3sAwFPNiOcUSCURyWRbo/STvV84cSD4H283fTvy3yyFxxQQuxQMyJx9ClzpHiA10KB2iM0gwWhzAd4J4hYThtbHL/+1Gdp0UaSypY2sRa0F7haUsD/XptAVK20Jp7B9olZD7vp4H2wRneVYDwhZrvmp1R3K2mlNe7ogNi0Y01rIX3bCCX7v1C+d0XhD5mGJUDxBTkpneG9Q7U34N9hydCIqIL2BxAw0QCidp+2SICOVqWpCVtxqXtSt9otnb3/cCgTP6loqFUtCepFUBPpyiVSTWUr3Kll2M+doc+qpNIyOpajmDdu00fvH2w+t9WfF1e5/5jxrsaCvr6WxDB/G4UIY4PUsjyPaiVZ2yGaOS4H4kourIRaFQbrcuf6HFqhGb9oJytYinrG68g1SvkXTQ=
-
-after_success:
-  - codecov
