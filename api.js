@@ -1,4 +1,4 @@
-if (process.env.NEW_RELIC_LICENSE_KEY) require('newrelic')
+if (process.env.NEW_RELIC_LICENSE_KEY) { require('newrelic') }
 var Hapi = require('hapi')
 var Inert = require('inert')
 var Vision = require('vision')
@@ -41,7 +41,7 @@ server.register([
 // =============== Start our Server =======================
 // Register plugins, and start the server if none of them fail
 server.register(plugins, function (err) {
-  if (err) throw err
+  if (err) { throw err }
 
   server.start(function () {
     console.log('Server running at:', server.info.uri)
