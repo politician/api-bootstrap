@@ -111,6 +111,11 @@ This API is compatible with [CloudFoundry](https://www.cloudfoundry.org) through
 > 2. Watch the deployment in Cloud Foundry
 > 3. Your API is now available on `https://<app name>.<cloudfoundry domain>/documentation`
 
+Docker image
+--------------
+[Docker image](https://hub.docker.com/r/iromain/api-bootstrap/) is automatically build by using the docker hub automated build functionality.
+
+
 New Relic monitoring
 --------------------
 
