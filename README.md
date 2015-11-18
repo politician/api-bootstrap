@@ -115,6 +115,11 @@ Docker image
 --------------
 [Docker image](https://hub.docker.com/r/iromain/api-bootstrap/) is automatically build by using the docker hub automated build functionality.
 
+> Note for Cloud Foundry Docker deployment
+
+> Diego supports docker containers, however as of today it has issues to interpret the command CMD in Dockerfiles. A workaround is to specify manually the start command when pushing.
+> Example: `cf push api-bootstrap -o iromain/api-bootstrap -c "node api.js"`
+
 
 New Relic monitoring
 --------------------
