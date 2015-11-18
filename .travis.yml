@@ -11,8 +11,8 @@ after_script:
   - codeclimate-test-reporter < lcov.info
 before_install:
   # iromain/api-bootstrap refers to https://hub.docker.com/r/iromain/api-bootstrap
-  - docker build -t iromain/api-bootstrap . > /dev/null 2>&1
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" hub.docker.com
+  - docker build -t iromain/api-bootstrap . > docker-build.log 2>&1
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push iromain/api-bootstrap
 
 deploy:
