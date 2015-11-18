@@ -62,6 +62,8 @@ This API is compatible with [Code Climate](https://codeclimate.com) through the 
 > 2. Edit the `addons.code_climate.repo_token` in [.travis.yml](.travis.yml)
 > Tip: Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) your token with `travis encrypt <token> --add addons.code_climate.repo_token`
 
+This API is also compatible with Codacy [![Codacy Badge](https://api.codacy.com/project/badge/5e7e5bcce27744baad9248c94e3e98c9)](https://www.codacy.com/app/iRomain/api-bootstrap)
+
 Prod
 ====
 
