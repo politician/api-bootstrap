@@ -1,0 +1,6 @@
+---
+applications:
+  - name: api-bootstrap
+    memory: 256M
+    disk_quota: 300M
+    buildpack: nodejs_buildpack

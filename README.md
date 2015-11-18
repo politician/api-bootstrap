@@ -64,6 +64,7 @@ This API is compatible with [Code Climate](https://codeclimate.com) through the 
 
 This API is also compatible with Codacy [![Codacy Badge](https://api.codacy.com/project/badge/5e7e5bcce27744baad9248c94e3e98c9)](https://www.codacy.com/app/iRomain/api-bootstrap)
 
+
 Prod
 ====
 
@@ -81,14 +82,34 @@ This API is compatible with [Heroku](http://keroku.com) through the [Travis/Hero
 > Change the Deploy configuration in [.travis.yml](.travis.yml):
 
 > 1. Change your `deploy.app` name
-> 2. Change your [encrypted](http://docs.travis-ci.com/user/encryption-keys/) `deploy.api_key`
-> Tip: Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) your key with `travis encrypt <api key> --add deploy.api_key`
+> 2. Change your `deploy.api_key`
+> Tip: Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) your api key with `travis encrypt <api key> --add deploy.api_key`
 
 > Push to GitHub:
 
 > 1. Watch the build in Travis
 > 2. Watch the deployment in Heroku
 > 3. Your API is now available on `https://<app name>.herokuapp.com/documentation`
+
+Cloud Foundry hosting [this API](http://api-bootstrap.apps.eu01.cf.canopy-cloud.com/documentation) on [Canopy](http://www.canopy-cloud.com)
+--------------
+
+This API is compatible with [CloudFoundry](https://www.cloudfoundry.org) through the [Travis/Cloud Foundry integration](http://docs.travis-ci.com/user/deployment/cloudfoundry/).
+
+> Change the Deploy configuration in [.travis.yml](.travis.yml):
+
+> 1. Change your `deploy.organization` name
+> 1. Change your `deploy.space` name
+> 2. Change your `deploy.api`
+> 2. Change your `deploy.username`
+> 2. Change your `deploy.password`
+> Note: For privacy reasons, I decided to encrypt the api endpoint, my username and my password. Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) at least your password with `travis encrypt <password> --add deploy.password`
+
+> Push to GitHub:
+
+> 1. Watch the build in Travis
+> 2. Watch the deployment in Cloud Foundry
+> 3. Your API is now available on `https://<app name>.<cloudfoundry domain>/documentation`
 
 New Relic monitoring
 --------------------

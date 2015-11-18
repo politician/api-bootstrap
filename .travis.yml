@@ -1,24 +1,35 @@
 sudo: false
 language: node_js
 node_js:
-  - 4.2.1
+- 4.2.1
 before_script:
-  - npm install -g lab
-  - npm install -g codeclimate-test-reporter
+- npm install -g lab
+- npm install -g codeclimate-test-reporter
 after_script:
-  - codeclimate-test-reporter < lcov.info
+- codeclimate-test-reporter < lcov.info
 deploy:
+  matrix:
   - provider: heroku
     api_key:
       secure: nKrNGlvXdCAVBaIFkkajRaAx9XnQrtAwvnOX6DwNdLe2ic0ZJl8/QPt54nt7WX1+8ik/yRtmRswzc5XxIDCob3s7f2tjTfjE9xXYocB9LkahwV5VH2omnW1FwdCOJbkWiuzb3F+ffJfExNrltjWeWKHplQ3RSvSLpNQe48iYa5bppQZtFaAJQRT2k4fLu2oS5T7Bx0FI+e5FTFVLRMXqMk3OBTV4xK4A0Q9VPqNLc31yIJH1o+LEYisbbFqIdL1E4v/JhvjYVKPknqru3Hkg6cwpVnOyDMHCaGd8MZw7bKTD8xI/u+8C8KTCXq2LAx3oTi+jpPq68fjRRrHQl6vrdAYEjB90iEWJjqDx33yjMFawggQOewwZ88IaYli1AQHtwIlG6i1NJ4wWJz4OxXtycVC3U8bxhRNHCMfDbDqrxEDO1VBm3JRaOEEPQ1gJMB0ODr3EIgCHdCvwA6FHBHrSy+WP2+eXGJ0cuVY/51aUpIjdyrLuK31yZezW48HjUctmT31nmmUexPzPu5sqX1qJf/17+GRQ7BuoFAlz7v6OfrsnwFLnSdS9fz9ejD39NOzq4OoB+DyiudRd2wzn6a3DQbwu8G6q2+u5O3ZP6ubL1CwilkX43HjLWjCB7joEb3Mjv2GX4LBStM+iPvRSlEwbO1H3AEP+aZPHcs7AVGVe0QE=
     app: api-bootstrap
     on:
       repo: iRomain/api-bootstrap
+  - provider: cloudfoundry
+    edge: true
+    organization: romain
+    space: dev
+    api:
+      secure: UwQTXYXjU0n4o9PDWezZ4H70nLuq2UY0GE4f2PLmvE5hMzoz5jQnVdoGxpqKqtTZKBuRsjKinIhOIcyofM4YvGBTg+MfLfvYMESEVWOj15SCogWY04JWicjV/kmEURxR3xnbPGNdGPChjvK5rA6wqDg+wZgSIxp6IGYIYWpP4lnNqZpE1U7z5G99gt5OMHu3Zz7eo7KZTzLT1cQneXRZNihOAMdM4KMjfR9QTp3vVCGSwR5CQZSu+P9GbwBZ6XzrmjUU23Dgs2aEcOOekj5F3HqAF9Isl4oxOEOSg7Gm/up6EvTmfwFf9ncSvcAc5wmPLVsN12A5O4Kd+YK/O3Cg/R1+CivqG0ZPjYP5A26sghkDhntpuB+aXv005IbxycuwbjdNjcby42EMCnVpDkXy9RQ8RoNubRp1HI/nd4EZJkKQ2Pod06yW547J6CAbACTv1lu1Qr1MhMEvIWYK/mQqwaX9x5i4UIPO7Y3/LXltjJ+7Q9gUz+DFOFvXyA7Ha8k95ySh9NoOj8ZS30BiebCL6G1USAyFx3aINBJx85fTZprXs53o5V8860Ru+sUL9POWRDwJeyC0YEU0y3wEbutfutmfTMiXOL5FISl1hxaCbl9OO5Bu+MjoqCRDV/G2FKZvzbYWurISLYIfrWwG5fIxPSRUtWs+3VNqFMTKyRN+pBI=
+    username:
+      secure: PfQasOZvMaCWaWf3xf67rmBJLsKfTKEDvEixuxN3GDV1S9Vr2V/oexyemOl3SJOmhuMOAt9yREQootcR3pfubEJyUOrbpH4s8pVOHiJbtR8U+HyFsdslQB3lozeeHYbvds8nIZxNRxvMl30eECUqOPuTRwOhlQo//XHP4hcSvZAEEpUBZKjcj/OZNvx5xCjMFWE8t275mFjp9MAbi0LbSfiwdtEeBeFpXo9zZCeXFKRpEgb8QKVLcp4WxVjMs2aSY9OHgw7ktuG9fCFvt0Ekp2o0WylF9AS6V+hh7INnop9O3aoJgtaKa2pzOIDOD/6C1AtHhX5Iu9XI0J00Ci+lSxj5ppkNl8uCovYiW17SNR4nJnaZkKHwR5i6rcnmWE3pX7k716uSgEF4eR9Xz/1Wo8Y5+Y5CqENph+/9V9iss+qMbr4jU/9hL6S62YyMpzGSWmC2PJFGsvLIcIEMvdG3kbsRmVmNVG/+3e7/hFNKkxyKEKQ0cwdqxfZeTJYsULObJU+qduruyaWKHTEeBHKW9WcrRszQu7xmZqeIjoIKg4G3X4frTld/Ea2YDmhl73Um1nRLhiVt7fLy0m2MiAstMaLmspaGQ8nAAFOHmmj5bFN44imZzphX2aoc8i92EXipNMK8pg5bGY5pBASZyoa/f0z/IK+MkaBK2VaElNVOyQI=
+    password:
+      secure: OsJkfhKwFsWmmD+a/DPajkv9Nqu9hjzbxcxh9OP+9mH6aiVa4PMtxvkGjp2zT2YbmNPDpFq6kMaY9+QbQDW3xD20K8TODVB3fWoXvAe7nZk38B7lhZl9CwJJO1Eaweg13k30HYmypO/xubvUQ1PrX+ZXFFiXbibFELEzH3QSK7b72vfFvuh7owLrXH3uvkwSSbx5dRZpmCSrxjdS2kJJ8uSkSAxNTEDyxaqsLUEe1CD20wgTfg8x8cSQuJ+ZqGHdSjhH+QZQK8WIfu9L1GVQHSYb9tfi7YvAupFbnNbIzuacnHmlLnWWXMx3V7KXLhU5eqFtiSiuojNowB18qj+zmc+bldT1ITgwuDDa4N4LtMgN7/9YfqR3iGh7O9riyU5QaLT8ycVRe96pZQJyUa99lpyi5VJgZoF4EYuHmAI8SX2Q5APAr9uBRTqkXic+C+/G6nVc1x2Ovv7DObVZiuPqtGPken2QoxbdorqhAyhEE6leVBxgNux0rc/Udb2Id1tRTo6lVUFDtQwqIiHRs7Q3IkwrpZmTciwOH643T8TZutns5yz1UY0E3Ah0raLBBqf7i3y2S2WnjI9DfXTDOsgK88VE1Krlo5HYepIxsllY8pKEdJa5/myZt9QD5DVNByHp54VhjAYNw3/6XIz8DXpBpaZvotoj15INjKXB1mUWkv0=
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - NODE_ENV=test
+- NODE_ENV=test
 addons:
   code_climate:
     repo_token:
