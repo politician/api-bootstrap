@@ -91,9 +91,9 @@ This API is compatible with [Heroku](http://keroku.com) through the [Travis/Hero
 > 2. Watch the deployment in Heroku
 > 3. Your API is now available on `https://<app name>.herokuapp.com/documentation`
 
-Cloud Foundry hosting [this API](http://api-bootstrap.apps.eu01.cf.canopy-cloud.com/documentation) on [Canopy](http://www.canopy-cloud.com)
+Cloud Foundry hosting
 --------------
-
+Cloud Foundry hosting for [this API](http://api-bootstrap.apps.eu01.cf.canopy-cloud.com/documentation) is provided by [Canopy](http://www.canopy-cloud.com)
 This API is compatible with [CloudFoundry](https://www.cloudfoundry.org) through the [Travis/Cloud Foundry integration](http://docs.travis-ci.com/user/deployment/cloudfoundry/).
 
 > Change the Deploy configuration in [.travis.yml](.travis.yml):
