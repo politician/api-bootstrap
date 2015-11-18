@@ -1,12 +1,12 @@
 sudo: false
 language: node_js
 node_js:
-- 4.2.1
+  - 4.2.2
 before_script:
-- npm install -g lab
-- npm install -g codeclimate-test-reporter
+  - npm install -g lab
+  - npm install -g codeclimate-test-reporter
 after_script:
-- codeclimate-test-reporter < lcov.info
+  - codeclimate-test-reporter < lcov.info
 deploy:
   - provider: heroku
     api_key:
@@ -28,7 +28,7 @@ cache:
   directories:
   - node_modules
 env:
-- NODE_ENV=test
+  - NODE_ENV=test
 addons:
   code_climate:
     repo_token:
