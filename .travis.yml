@@ -1,18 +1,27 @@
-sudo: false
+sudo: required
 language: node_js
 node_js:
   - 4.2.2
+services:
+  - docker
 before_script:
   - npm install -g lab
   - npm install -g codeclimate-test-reporter
 after_script:
   - codeclimate-test-reporter < lcov.info
+before_install:
+  # iromain/api-bootstrap refers to https://hub.docker.com/r/iromain/api-bootstrap
+  - docker build -t iromain/api-bootstrap .
+  - docker docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" hub.docker.com
+  - docker push iromain/api-bootstrap
+
 deploy:
   - provider: heroku
     api_key:
       secure: nKrNGlvXdCAVBaIFkkajRaAx9XnQrtAwvnOX6DwNdLe2ic0ZJl8/QPt54nt7WX1+8ik/yRtmRswzc5XxIDCob3s7f2tjTfjE9xXYocB9LkahwV5VH2omnW1FwdCOJbkWiuzb3F+ffJfExNrltjWeWKHplQ3RSvSLpNQe48iYa5bppQZtFaAJQRT2k4fLu2oS5T7Bx0FI+e5FTFVLRMXqMk3OBTV4xK4A0Q9VPqNLc31yIJH1o+LEYisbbFqIdL1E4v/JhvjYVKPknqru3Hkg6cwpVnOyDMHCaGd8MZw7bKTD8xI/u+8C8KTCXq2LAx3oTi+jpPq68fjRRrHQl6vrdAYEjB90iEWJjqDx33yjMFawggQOewwZ88IaYli1AQHtwIlG6i1NJ4wWJz4OxXtycVC3U8bxhRNHCMfDbDqrxEDO1VBm3JRaOEEPQ1gJMB0ODr3EIgCHdCvwA6FHBHrSy+WP2+eXGJ0cuVY/51aUpIjdyrLuK31yZezW48HjUctmT31nmmUexPzPu5sqX1qJf/17+GRQ7BuoFAlz7v6OfrsnwFLnSdS9fz9ejD39NOzq4OoB+DyiudRd2wzn6a3DQbwu8G6q2+u5O3ZP6ubL1CwilkX43HjLWjCB7joEb3Mjv2GX4LBStM+iPvRSlEwbO1H3AEP+aZPHcs7AVGVe0QE=
     app: api-bootstrap
     on:
+      # iRomain/api-bootstrap refers to https://github.com/iRomain/api-bootstrap
       repo: iRomain/api-bootstrap
   - provider: cloudfoundry
     edge: true
@@ -29,6 +38,11 @@ cache:
   - node_modules
 env:
   - NODE_ENV=test
+  - DOCKER_USERNAME=iromain
+  # travis encrypt DOCKER_EMAIL=your@ema.il
+  - secure: doTA/m0k7fwh5STxjhS6xvR+Pi5EkRK3/agO8NTPvo3H3VjHz4R7vN4rB0Gxe/CPi58yz1vmAuY+oiN3N3pJOH1v5h64gG8Bqn1KaAd3y/cE/xlkt5Nttr4QkQvwU+MDEQZDjcDWjP2xuuCLfg4pHPJvabVEN0yyYdWx5EzYKFiygVFLPPBKgtqljlxc/z16If2igaP7xP+JDwjaeN/V/29F+vo3hkPPSvFhr5GVy0AeQfJIO9E6puc0Q6Z8mVMwk4ThHS7UiW6A1s1vEsUajQTzY0sOgsUHNO9fVCtUHb0/+81hKCHD4NOQwmFOGTXqhn2kezqOazohjKYlQCnB5xI0Z2hQuBAcmdiuzMCVWY9R1bNQDNzEDKc+e7q65O2ab3npzJ7t11Pdn15WZBPTYflgnLAH5N36mahNiUYJgSBGZeWZ58K9h8Pgm5X7zRpQIvBQrDcCFRBpcmxD90AnciswjlqW3kArRq6CPn7R3Ye3ioTQqGPf6jUilsydpocWoECsNd6wn1VAr0wTS8q5oYwuP+AmWIejuzt5p8M+FiISZbQwcZzZGVOWSCOZwqzuPoSEedMoVNHj55geLB3WUvu8CKYSZCC3Obi1HZRnCPEX4H8kjV1aaMlgYstnmtIXVSbBlsyjP6rak3hzReO6rioZquVYKe9AjW4RBeH8tU0=
+  # travis encrypt DOCKER_PASSWORD=a7143g3DZ67DpspX
+  - secure: gF6cnC/S25CPiaBepZn6pnovxcGfG5FcYDqYzbmRQz3ZRHtjQlS/RFyyFI1PXeL6k1tkZI14dn6gZGCGONTI866najPWwjMawgXu6ppH8yXUCJYy9MP2esZytCfqGRP9dqgM4txbOxzyCtZSwMV7+FY/7psYQjLaEp5mYAIkf25456U7dUSMEKOI+4WwcZmXz13rdZ1VN+bwLqiyYQt/5SvmD0X9heQSi94gFvDuWlAyXliDkOhsTh9ncIXu+JMvh8L3mjGY//PIE5w1RySk8aPL+DuJrabND1ugxkZXIAwHsIeeWD+I7+g6TDgPRLCgN0s6/9CFMvgKw4WY2fHeIIssC+UipXCLwWM5+fX58QGpuHdfkTN9wdp99e62+2r3tS7C5ZkZQRPEBHLIeGjVBA4O+JkqLU/PT+N6DYr6mFNyPf2o/I8PAg30T1JpX4Py7/EUHAQkzpkHtpX/YQddsvqR569L/h7xRgyOXT+mxUS/Q45TdNFRfY5t9UqlmNnrunpr8SQj6gk6cJ4cRQNveaUrbgmHN7CesYzitW7oG3cWk4ckoZUdmg+gZLKZ5BNe3eaISb4fkIXnEJh3wOcnjqjdIftq6YrK5NhxJ1ak8NBZN1n+xQiFlUgy2l23M0lpchaeChAtnOU69SuL7gla7foMZKzNXaEm4mKZ/V1S7E4=
 addons:
   code_climate:
     repo_token:

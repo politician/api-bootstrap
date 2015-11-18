@@ -91,6 +91,15 @@ This API is compatible with [Heroku](http://keroku.com) through the [Travis/Hero
 > 2. Watch the deployment in Heroku
 > 3. Your API is now available on `https://<app name>.herokuapp.com/documentation`
 
+Docker image
+--------------
+A [Docker image](https://hub.docker.com/r/iromain/api-bootstrap/) is automatically built by using the [Travis/Docker integration](http://docs.travis-ci.com/user/docker/). It could be setup with docker hub [automated build](https://hub.docker.com/add/automated-build) functionality but I prefer how everything can be configured in .travis.yml close to the code.
+
+> Change the Docker image build configuration in [.travis.yml](.travis.yml):
+
+> 1. Change your image repo in `before_install` for both the build and push commands
+> 2. Change your [encrypted](http://docs.travis-ci.com/user/encryption-keys/) docker email, username, password in `env`
+
 Cloud Foundry hosting
 --------------
 Cloud Foundry hosting for [this API](http://api-bootstrap.apps.eu01.cf.canopy-cloud.com/documentation) is provided by [Canopy](http://www.canopy-cloud.com)
@@ -99,10 +108,10 @@ This API is compatible with [CloudFoundry](https://www.cloudfoundry.org) through
 > Change the Deploy configuration in [.travis.yml](.travis.yml):
 
 > 1. Change your `deploy.organization` name
-> 1. Change your `deploy.space` name
-> 2. Change your `deploy.api`
-> 2. Change your `deploy.username`
-> 2. Change your `deploy.password`
+> 2. Change your `deploy.space` name
+> 3. Change your `deploy.api`
+> 4. Change your `deploy.username`
+> 5. Change your `deploy.password`
 > Note: For privacy reasons, I decided to encrypt the api endpoint, my username and my password. Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) at least your password with `travis encrypt <password> --add deploy.password`
 
 > Push to GitHub:
@@ -111,14 +120,13 @@ This API is compatible with [CloudFoundry](https://www.cloudfoundry.org) through
 > 2. Watch the deployment in Cloud Foundry
 > 3. Your API is now available on `https://<app name>.<cloudfoundry domain>/documentation`
 
-Docker image
---------------
-[Docker image](https://hub.docker.com/r/iromain/api-bootstrap/) is automatically build by using the docker hub automated build functionality.
 
-> Note for Cloud Foundry Docker deployment
+**Note for Cloud Foundry Docker deployment**
 
-> Diego supports docker containers, however as of today it has issues to interpret the command CMD in Dockerfiles. A workaround is to specify manually the start command when pushing.
-> Example: `cf push api-bootstrap -o iromain/api-bootstrap -c "node api.js"`
+Diego supports docker containers, however as of today it has issues to interpret the command CMD in Dockerfiles. A workaround is to specify manually the start command when pushing.
+
+> Example: 
+> `cf push api-bootstrap -o iromain/api-bootstrap -c "node api.js"`
 
 
 New Relic monitoring
