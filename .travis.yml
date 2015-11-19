@@ -12,7 +12,6 @@ after_script:
 before_install:
   # iromain/api-bootstrap refers to https://hub.docker.com/r/iromain/api-bootstrap
   - docker build -t iromain/api-bootstrap . > docker-build.log 2>&1
-  - docker run iromain/api-bootstrap /bin/sh -c "npm test"
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push iromain/api-bootstrap
 
