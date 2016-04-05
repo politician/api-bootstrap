@@ -33,6 +33,8 @@ Dev
 ===
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
+If you have not installed gulp globally, we suggest you do it with `npm install -g gulp` otherwise run the following commands from the node_modules directory: `./node_modules/gulp/bin/gulp.js`
+
 Run `gulp`, it will automatically test, lint and start your API, watching any modification and re-linting/starting with nodemon.
 
 Gulp sets the environment variable `NODE_ENV=dev`
