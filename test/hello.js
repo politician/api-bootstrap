@@ -8,7 +8,7 @@ lab.experiment('Hello Tests', function () {
   lab.test('GET /api/hello/{yourname*}', function (done) {
     var options = {
       method: 'GET',
-      url: '/hello/Timmy'
+      url: '/api/hello/Timmy'
     }
 
     // server.inject lets you similate an http request
