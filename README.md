@@ -24,9 +24,14 @@ Features
 Installation
 ============
 
-> git clone https://github.com/iRomain/api-bootstrap.git
-> cd api-bootstrap
-> npm install
+Clone this repository to your development machine
+`git clone https://github.com/iRomain/api-bootstrap.git`
+
+Enter the newly created directory
+`cd api-bootstrap`
+
+Install NPM dependencies
+`npm install`
 
 
 Dev
