@@ -4,7 +4,7 @@ var Joi = require('joi')
 exports.register = function (server, options, next) {
   server.route({
     method: 'GET',
-    path: '/hello/{yourname*}',
+    path: '/api/hello/{yourname*}',
     config: {
       tags: ['api'],
       description: 'Say hello',

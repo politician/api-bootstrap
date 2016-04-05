@@ -1,11 +1,11 @@
-var Lab = require('lab')
-var Code = require('code')
-var server = require('../api.js')
-var lab = exports.lab = Lab.script()
+const Lab = require('lab')
+const Code = require('code')
+const server = require('../api.js')
+const lab = exports.lab = Lab.script()
 
 lab.experiment('Hello Tests', function () {
   // tests
-  lab.test('GET /hello/{yourname*}', function (done) {
+  lab.test('GET /api/hello/{yourname*}', function (done) {
     var options = {
       method: 'GET',
       url: '/hello/Timmy'

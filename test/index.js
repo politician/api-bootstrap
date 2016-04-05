@@ -3,13 +3,14 @@ const Code = require('code')
 const server = require('../api.js')
 const lab = exports.lab = Lab.script()
 
-lab.experiment('API Tests', function () {
+lab.experiment('Index Tests', function () {
   // tests
-  lab.test('GET /api/users', function (done) {
+  lab.test('GET /', function (done) {
     var options = {
       method: 'GET',
-      url: '/api/users'
+      url: '/'
     }
+
     // server.inject lets you similate an http request
     server.inject(options, function (response) {
       Code.expect(response.statusCode).to.equal(200) //  Expect http response status code to be 200 ("Ok")

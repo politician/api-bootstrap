@@ -1,23 +1,27 @@
 if (process.env.NEW_RELIC_LICENSE_KEY) { require('newrelic') }
-var Hapi = require('hapi')
-var Inert = require('inert')
-var Vision = require('vision')
-var Pack = require('./package')
-var HapiSwagger = require('hapi-swagger')
+const Hapi = require('hapi')
+const Inert = require('inert')
+const Vision = require('vision')
+const Pack = require('./package')
+const HapiSwagger = require('hapi-swagger')
 
 // Create Server Object
-var server = new Hapi.Server()
+const server = new Hapi.Server()
 
 // Define PORT number
 server.connection({host: '0.0.0.0', port: (~~process.env.PORT || 3000)})
 
 // Define Swagger options
-var swaggerOptions = {
-  apiVersion: Pack.version
+const options = {
+  info: {
+    'title': 'Test API Documentation',
+    'version': Pack.version
+  }
 }
 
 // Declare plugins
-var plugins = [
+const plugins = [
+    { register: require('./api/index.js') },
     { register: require('./api/hello.js') },
     { register: require('./api/users.js') }
 ]
@@ -28,7 +32,7 @@ server.register([
   Vision,
   {
     register: HapiSwagger,
-    options: swaggerOptions
+    options: options
   }],
   function (err) {
     if (err) {
