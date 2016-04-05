@@ -21,6 +21,14 @@ Features
    - Documentation: [Swagger](http://swagger.io)
 
 
+Installation
+============
+
+> git clone https://github.com/iRomain/api-bootstrap.git
+> cd api-bootstrap
+> npm install
+
+
 Dev
 ===
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
