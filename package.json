@@ -22,7 +22,7 @@
   "homepage": "https://github.com/iRomain/api-bootstrap#readme",
   "bugs": "https://github.com/iRomain/api-bootstrap/issues",
   "engines": {
-    "node": "5.1.0"
+    "node": "6.0.0"
   },
 
   "dependencies": {
