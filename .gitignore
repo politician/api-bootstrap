@@ -2,3 +2,4 @@ npm-debug.log
 node_modules
 newrelic_agent.log
 lcov.info
+docker-build.log
