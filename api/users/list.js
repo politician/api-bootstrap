@@ -2,17 +2,17 @@
 exports.register = function (server, options, next) {
   server.route({
     method: 'GET', // Methods Type
-    path: '/api/users', // Url
+    path: '/users/list', // Url
     config: { // Swagger
-      tags: ['api'],
-      description: 'Get All User data',
-      notes: 'Get All User data'
+      tags: ['api', 'users', 'list'],
+      description: 'Get All Users',
+      notes: 'Get All Users'
     },
     handler: function (request, reply) { // Action
       // Response JSON object
       reply({
         statusCode: 200,
-        message: 'Getting All User Data',
+        message: 'Getting All Users',
         data: [
           {
             name: 'Kashish',
@@ -37,6 +37,6 @@ exports.register = function (server, options, next) {
 
 // Required attributes for plugin registration
 exports.register.attributes = {
-  name: 'api/users', // Must be unique
+  name: 'users/list', // Must be unique
   version: '1.0.0'
 }

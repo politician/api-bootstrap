@@ -3,19 +3,22 @@ var Joi = require('joi')
 // Options can be passed to plugins on registration
 exports.register = function (server, options, next) {
   server.route({
-    method: 'GET',
-    path: '/api/hello/{yourname*}',
+    method: 'POST',
+    path: '/account/hello',
     config: {
-      tags: ['api'],
+      tags: ['api', 'account', 'hello'],
       description: 'Say hello',
       notes: 'Say hello to someone',
       validate: {
-        params: {
-          yourname: Joi.string().max(40).min(2).alphanum()
+        payload: {
+          yourname: Joi.string().required().max(40).min(2).default("John")
         }
       },
-      handler: function (req, reply) {
-        reply({message: 'Bonjour ' + req.params.yourname + '!'})
+      handler: function (request, reply) {
+        reply({
+          statusCode: 200,
+          message: 'Hello ' + request.payload.yourname + '!'
+        })
       }
     }
   })
@@ -26,6 +29,6 @@ exports.register = function (server, options, next) {
 
 // Required attributes for plugin registration
 exports.register.attributes = {
-  name: 'api/hello', // Must be unique
+  name: 'account/hello', // Must be unique
   version: '1.0.0'
 }

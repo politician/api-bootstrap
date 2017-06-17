@@ -13,17 +13,35 @@ server.connection({host: '0.0.0.0', port: (~~process.env.PORT || 3000)})
 
 // Define Swagger options
 const options = {
+  payloadType: 'form',
   info: {
-    'title': 'Test API Documentation',
-    'version': Pack.version
-  }
+    'title': Pack.name + ' API Documentation',
+    'version': Pack.version,
+    'description': Pack.description,
+    'contact': {
+      'name': Pack.author
+    },
+    'license': {
+      'name': Pack.license
+    }
+  },
+  tags: [
+    {
+      'name': 'account',
+      'description': 'Access account data'
+    }, {
+      'name': 'users',
+      'description': 'Access user data'
+    }
+  ]
 }
 
 // Declare plugins
 const plugins = [
-    { register: require('./api/index.js') },
-    { register: require('./api/hello.js') },
-    { register: require('./api/users.js') }
+    { register: require('./api/index') },
+    { register: require('./api/account/hello') },
+    { register: require('./api/account/goodbye') },
+    { register: require('./api/users/list') }
 ]
 
 // Register Swagger Plugin ( Use for documentation and testing purpose )
