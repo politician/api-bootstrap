@@ -1,7 +1,7 @@
 {
-  "name": "prestasedis",
+  "name": "api-bootstrap",
   "version": "0.0.1",
-  "description": "Prestashop orders to Sedis",
+  "description": "API bootstrap used for my micro-services",
   "main": "api.js",
   "scripts": {
     "start": "node api.js",
@@ -9,16 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://github.com/iRomain/prestasedis.git"
+    "url": "git+ssh://github.com/iRomain/api-bootstrap.git"
   },
   "keywords": [
-    "prestashop",
-    "sedis"
+    "bootstrap",
+    "api",
+    "microservice",
+    "hapi"
   ],
   "author": "Romain Barissat",
   "license": "MIT",
-  "homepage": "https://github.com/iRomain/prestasedis#readme",
-  "bugs": "https://github.com/iRomain/prestasedis/issues",
+  "homepage": "https://github.com/iRomain/api-bootstrap#readme",
+  "bugs": "https://github.com/iRomain/api-bootstrap/issues",
   "engines": {
     "node": "8.1.2"
   },

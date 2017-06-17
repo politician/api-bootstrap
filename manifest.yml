@@ -1,7 +1,7 @@
 ---
 applications:
   # api-bootstrap refers to the name of the app in Cloud Foundry
-  - name: prestasedis
+  - name: api-bootstrap
     memory: 256M
     disk_quota: 300M
     buildpack: nodejs_buildpack
