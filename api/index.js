@@ -10,7 +10,7 @@ exports.register = function (server, options, next) {
     },
     handler: function (req, reply) {
       reply({version: '1.0.0',
-          message: 'Now head to /documentation to see all the commands available'
+        message: 'Now head to /documentation to see all the commands available'
       })
     }
   })
