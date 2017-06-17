@@ -5,7 +5,7 @@ I bootstrap my API's using this repo to create NodeJS based micro-services.
 
 It is licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License), so feel free to use it for any project and of course please feel free to raise issues and contribute through pull requests. 
 
-[Demo](https://api-bootstrap.herokuapp.com/documentation) (hosted on heroku free plan - available 18h/day)
+[Demo](https://prestasedis.herokuapp.com/documentation) (hosted on heroku free plan - available 18h/day)
 
 
 Features
@@ -26,11 +26,11 @@ Installation
 
 Clone this repository to your development machine:
 
-`git clone https://github.com/iRomain/api-bootstrap.git`
+`git clone https://github.com/iRomain/prestasedis.git`
 
 Enter the newly created directory:
 
-`cd api-bootstrap`
+`cd prestasedis`
 
 Install NPM dependencies:
 
@@ -59,7 +59,7 @@ You can see your API on [http://localhost:3000](http://localhost:3000) and see i
 Test
 ====
 
-Travis CI [![Build Status](https://api.travis-ci.org/iRomain/api-bootstrap.svg)](https://travis-ci.org/iRomain/api-bootstrap)
+Travis CI [![Build Status](https://api.travis-ci.org/iRomain/prestasedis.svg)](https://travis-ci.org/iRomain/prestasedis)
 ---------
 
 This API is compatible with [Travis](https://travis-ci.org).
@@ -71,7 +71,7 @@ It sets the environment variable `NODE_ENV=test`
 > 1. [Sync Travis with your Github account](https://travis-ci.org/profile) and add this repo
 > 2. Push your repo (if you didn't change/remove the [`deploy`](.travis.yml#L7) part, it will fail at deployment)
 
-Code Climate [![Code Climate](https://codeclimate.com/github/iRomain/api-bootstrap/badges/gpa.svg)](https://codeclimate.com/github/iRomain/api-bootstrap) [![Test Coverage](https://codeclimate.com/github/iRomain/api-bootstrap/badges/coverage.svg)](https://codeclimate.com/github/iRomain/api-bootstrap/coverage)
+Code Climate [![Code Climate](https://codeclimate.com/github/iRomain/prestasedis/badges/gpa.svg)](https://codeclimate.com/github/iRomain/prestasedis) [![Test Coverage](https://codeclimate.com/github/iRomain/prestasedis/badges/coverage.svg)](https://codeclimate.com/github/iRomain/prestasedis/coverage)
 ------------
 
 This API is compatible with [Code Climate](https://codeclimate.com) through the [Travis/Code Climate integration](http://docs.travis-ci.com/user/code-climate/)
@@ -80,13 +80,13 @@ This API is compatible with [Code Climate](https://codeclimate.com) through the 
 > 2. Edit the `addons.code_climate.repo_token` in [.travis.yml](.travis.yml)
 > Tip: Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) your token with `travis encrypt <token> --add addons.code_climate.repo_token`
 
-This API is also compatible with Codacy [![Codacy Badge](https://api.codacy.com/project/badge/5e7e5bcce27744baad9248c94e3e98c9)](https://www.codacy.com/app/iRomain/api-bootstrap)
+This API is also compatible with Codacy [![Codacy Badge](https://api.codacy.com/project/badge/5e7e5bcce27744baad9248c94e3e98c9)](https://www.codacy.com/app/iRomain/prestasedis)
 
 
 Prod
 ====
 
-Heroku hosting [![Deployment Status](http://heroku-badge.herokuapp.com/?app=api-bootstrap&style=flat&root=documentation)](https://api-bootstrap.herokuapp.com/documentation)
+Heroku hosting [![Deployment Status](http://heroku-badge.herokuapp.com/?app=prestasedis&style=flat&root=documentation)](https://prestasedis.herokuapp.com/documentation)
 --------------
 
 This API is compatible with [Heroku](http://keroku.com) through the [Travis/Heroku integration](http://docs.travis-ci.com/user/deployment/heroku/).
@@ -111,7 +111,7 @@ This API is compatible with [Heroku](http://keroku.com) through the [Travis/Hero
 
 Docker image
 --------------
-A [Docker image](https://hub.docker.com/r/iromain/api-bootstrap/) is automatically built by using the [Travis/Docker integration](http://docs.travis-ci.com/user/docker/). It could be setup with docker hub [automated build](https://hub.docker.com/add/automated-build) functionality but I prefer how everything can be configured in .travis.yml close to the code.
+A [Docker image](https://hub.docker.com/r/iromain/prestasedis/) is automatically built by using the [Travis/Docker integration](http://docs.travis-ci.com/user/docker/). It could be setup with docker hub [automated build](https://hub.docker.com/add/automated-build) functionality but I prefer how everything can be configured in .travis.yml close to the code.
 
 > Change the Docker image build configuration in [.travis.yml](.travis.yml):
 
@@ -120,7 +120,7 @@ A [Docker image](https://hub.docker.com/r/iromain/api-bootstrap/) is automatical
 
 Cloud Foundry hosting
 --------------
-Cloud Foundry hosting for [this API](http://api-bootstrap.apps.eu01.cf.canopy-cloud.com/documentation) is provided by [Canopy](http://www.canopy-cloud.com)
+Cloud Foundry hosting for [this API](http://prestasedis.apps.eu01.cf.canopy-cloud.com/documentation) is provided by [Canopy](http://www.canopy-cloud.com)
 This API is compatible with [CloudFoundry](https://www.cloudfoundry.org) through the [Travis/Cloud Foundry integration](http://docs.travis-ci.com/user/deployment/cloudfoundry/).
 
 > Change the Deploy configuration in [.travis.yml](.travis.yml):
@@ -144,7 +144,7 @@ This API is compatible with [CloudFoundry](https://www.cloudfoundry.org) through
 Diego supports docker containers, however as of today it has issues to interpret the command CMD in Dockerfiles. A workaround is to specify manually the start command when pushing.
 
 > Example: 
-> `cf push api-bootstrap -o iromain/api-bootstrap -c "node api.js"`
+> `cf push prestasedis -o iromain/prestasedis -c "node api.js"`
 
 
 New Relic monitoring
@@ -158,4 +158,4 @@ This API is compatible with [New Relic](http://newrelic.com) through the [Heroku
 
 ----------
 
-*Original credits to: [iRomain/api-bootstrap](https://github.com/iRomain/api-bootstrap)*
+*Original credits to: [iRomain/prestasedis](https://github.com/iRomain/prestasedis)*
