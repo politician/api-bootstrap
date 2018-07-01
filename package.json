@@ -22,27 +22,27 @@
   "homepage": "https://github.com/iRomain/api-bootstrap#readme",
   "bugs": "https://github.com/iRomain/api-bootstrap/issues",
   "engines": {
-    "node": "8.1.2"
+    "node": "latest"
   },
   "dependencies": {
-    "good": "*",
-    "good-console": "*",
-    "hapi": "*",
-    "hapi-swagger": "*",
-    "joi": "*",
-    "inert": "*",
-    "vision": "*",
-    "newrelic": "*"
+    "good": "latest",
+    "good-console": "latest",
+    "hapi": "latest",
+    "hapi-swagger": "latest",
+    "joi": "latest",
+    "inert": "latest",
+    "vision": "latest",
+    "newrelic": "latest"
   },
   "devDependencies": {
-    "gulp": "*",
-    "colors": "*",
-    "code": "*",
-    "lab": "*",
-    "gulp-lab": "*",
-    "nodemon": "*",
-    "standard": "*",
-    "gulp-standard": "*",
-    "gulp-nodemon": "*"
+    "gulp": ">=4.0.0",
+    "colors": "latest",
+    "code": "latest",
+    "lab": "latest",
+    "gulp-lab": "latest",
+    "nodemon": "latest",
+    "gulp-nodemon": "latest",
+    "standard": "latest",
+    "gulp-standard": "latest"
   }
 }

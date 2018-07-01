@@ -6,10 +6,7 @@ const Pack = require('./package')
 const HapiSwagger = require('hapi-swagger')
 
 // Create Server Object
-const server = new Hapi.Server()
-
-// Define PORT number
-server.connection({host: '0.0.0.0', port: (~~process.env.PORT || 3000)})
+const server = new Hapi.Server({host: '0.0.0.0', port: (~~process.env.PORT || 3000)})
 
 // Define Swagger options
 const options = {
@@ -38,37 +35,27 @@ const options = {
 
 // Declare plugins
 const plugins = [
-    { register: require('./api/index') },
-    { register: require('./api/account/hello') },
-    { register: require('./api/account/goodbye') },
-    { register: require('./api/users/list') }
-]
-
-// Register Swagger Plugin ( Use for documentation and testing purpose )
-server.register([
+  {plugin: HapiSwagger, options: options},
   Inert,
   Vision,
-  {
-    register: HapiSwagger,
-    options: options
-  }],
-  function (err) {
-    if (err) {
-      server.log(['error'], 'hapi-swagger load error: ' + err)
-    } else {
-      server.log(['start'], 'hapi-swagger interface loaded')
-    }
-  })
+  require('./api/index'),
+  require('./api/account/hello'),
+  require('./api/account/goodbye'),
+  require('./api/users/list')
+]
 
-// =============== Start our Server =======================
-// Register plugins, and start the server if none of them fail
-server.register(plugins, function (err) {
-  if (err) { throw err }
+const init = async () => {
+  await server.register(plugins)
+  await server.start()
+  console.log('Server running at:', server.info.uri)
+  console.log('Documentation available at:', server.info.uri + '/documentation')
+}
 
-  server.start(function () {
-    console.log('Server running at:', server.info.uri)
-    console.log('Documentation available at:', server.info.uri + '/documentation')
-  })
+process.on('unhandledRejection', (err) => {
+  console.log(err)
+  process.exit(1)
 })
+
+init()
 
 module.exports = server

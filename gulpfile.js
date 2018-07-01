@@ -13,7 +13,7 @@ gulp.task('lint', function () {
 
 gulp.task('lab', function () {
   return gulp.src('./test')
-    .pipe(lab('-v -l -C -p -t 50'))
+    .pipe(lab('-v -l -C -t 50'))
 })
 
 gulp.task('start', function () {
@@ -25,5 +25,5 @@ gulp.task('start', function () {
   })
 })
 
-gulp.task('test', ['lint', 'lab'])
-gulp.task('default', ['test', 'start'])
+gulp.task('test', gulp.series('lint', 'lab'))
+gulp.task('default', gulp.series('test', 'start'))

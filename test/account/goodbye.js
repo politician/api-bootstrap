@@ -3,7 +3,7 @@ const Code = require('code')
 const server = require('../../api.js')
 const lab = exports.lab = Lab.script()
 
-lab.experiment('goodbye Tests', function () {
+lab.experiment('Goodbye Tests', function () {
   // tests
   lab.test('POST /account/goodbye', function (done) {
     var options = {
