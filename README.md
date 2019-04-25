@@ -13,7 +13,6 @@ Features
 
  - Server: [NodeJS](https://nodejs.org)
  - Linting: [Standard](http://standardjs.com)
- - Task Management: [Gulp](http://gulpjs.com)
  - API:
    - Framework: [Hapi](http://hapijs.com)
    - Testing: [Lab](https://github.com/hapijs/lab), [Code](https://github.com/hapijs/code)
@@ -41,17 +40,15 @@ Dev
 ===
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
-If you have not installed gulp globally, we suggest you do it with `npm install -g gulp` otherwise run the following commands from the node_modules directory: `./node_modules/gulp/bin/gulp.js`
+Run `npm run dev-start`, it will automatically test, lint and start your API, watching any modification and re-linting/starting with nodemon.
 
-Run `gulp`, it will automatically test, lint and start your API, watching any modification and re-linting/starting with nodemon.
-
-Gulp sets the environment variable `NODE_ENV=dev`
+NPM sets the environment variable `NODE_ENV=dev`
 
 > Use [TDD](https://en.wikipedia.org/wiki/Test-driven_development):
 
 > 1. Write a test in `./test/`
 > 2. Add your endpoint in `./lib/api.js`
-> 3. Run `gulp`
+> 3. Run `npm run dev-start`
 
 You can see your API on [http://localhost:3000](http://localhost:3000) and see its documentation on [http://localhost:3000/documentation](http://localhost:3000/documentation)
 
@@ -101,7 +98,7 @@ This API is compatible with [Heroku](http://keroku.com) through the [Travis/Hero
 
 > 1. Change your `deploy.app` name
 > 2. Change your `deploy.api_key`
-> Tip: Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) your api key with `travis encrypt <api key> --add deploy.api_key`
+> Tip: Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) your api key with `travis encrypt <api key>`
 
 > Push to GitHub:
 

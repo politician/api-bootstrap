@@ -10,7 +10,7 @@ exports.plugin = {
         tags: ['api', 'users', 'list'],
         description: 'Get All Users',
         notes: 'Get All Users'
-      },      
+      },
       handler: function (req, h) {
         return {
           statusCode: 200,

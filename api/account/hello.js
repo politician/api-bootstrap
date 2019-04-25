@@ -1,4 +1,4 @@
-var Joi = require('joi')
+var Joi = require('@hapi/joi')
 
 // Options can be passed to plugins on registration
 exports.plugin = {
@@ -14,7 +14,7 @@ exports.plugin = {
         notes: 'Say hello to someone',
         validate: {
           payload: {
-            yourname: Joi.string().required().max(40).min(2).default("John")
+            yourname: Joi.string().required().max(40).min(2).default('John')
           }
         }
       },

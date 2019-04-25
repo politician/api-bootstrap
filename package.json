@@ -4,8 +4,12 @@
   "description": "API bootstrap used for my micro-services",
   "main": "api.js",
   "scripts": {
+    "lab": "lab -C",
+    "lint": "standard --verbose | snazzy",
+    "fix": "standard --fix",
+    "dev-start": "npm run fix && npm run lint && npm run lab && NODE_ENV=dev node api.js",
     "start": "node api.js",
-    "test": "lab -v -l -C && lab -r lcov > lcov.info"
+    "test": "npm run lint && npm run lab && lab -r lcov > lcov.info"
   },
   "repository": {
     "type": "git",
@@ -25,24 +29,21 @@
     "node": "latest"
   },
   "dependencies": {
-    "good": "latest",
-    "good-console": "latest",
-    "hapi": "latest",
+    "@hapi/good": "latest",
+    "@hapi/good-console": "latest",
+    "@hapi/hapi": "latest",
     "hapi-swagger": "latest",
-    "joi": "latest",
-    "inert": "latest",
-    "vision": "latest",
+    "@hapi/joi": "latest",
+    "@hapi/inert": "latest",
+    "@hapi/vision": "latest",
     "newrelic": "latest"
   },
   "devDependencies": {
-    "gulp": ">=4.0.0",
+    "@hapi/code": "latest",
+    "@hapi/lab": "latest",
     "colors": "latest",
-    "code": "latest",
-    "lab": "latest",
-    "gulp-lab": "latest",
     "nodemon": "latest",
-    "gulp-nodemon": "latest",
-    "standard": "latest",
-    "gulp-standard": "latest"
+    "snazzy": "^8.0.0",
+    "standard": "latest"
   }
 }

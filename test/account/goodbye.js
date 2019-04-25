@@ -1,5 +1,5 @@
-const Lab = require('lab')
-const Code = require('code')
+const Lab = require('@hapi/lab')
+const Code = require('@hapi/code')
 const server = require('../../api.js')
 const lab = exports.lab = Lab.script()
 
@@ -10,7 +10,7 @@ lab.experiment('Goodbye Tests', function () {
       method: 'POST',
       url: '/account/goodbye',
       payload: {
-        yourname: "John"
+        yourname: 'John'
       }
     }
 

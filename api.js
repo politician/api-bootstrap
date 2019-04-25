@@ -1,7 +1,7 @@
 if (process.env.NEW_RELIC_LICENSE_KEY) { require('newrelic') }
-const Hapi = require('hapi')
-const Inert = require('inert')
-const Vision = require('vision')
+const Hapi = require('@hapi/hapi')
+const Inert = require('@hapi/inert')
+const Vision = require('@hapi/vision')
 const Pack = require('./package')
 const HapiSwagger = require('hapi-swagger')
 
@@ -35,7 +35,7 @@ const options = {
 
 // Declare plugins
 const plugins = [
-  {plugin: HapiSwagger, options: options},
+  { plugin: HapiSwagger, options: options },
   Inert,
   Vision,
   require('./api/index'),
