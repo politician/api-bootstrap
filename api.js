@@ -6,7 +6,9 @@ const Pack = require('./package')
 const HapiSwagger = require('hapi-swagger')
 
 // Create Server Object
-const server = new Hapi.Server(process.env.PORT, '0.0.0.0')
+const server = new Hapi.Server({
+  port: process.env.NODE_ENV === 'production' ? +process.env.PORT : 3000
+})
 
 // Define Swagger options
 const options = {
