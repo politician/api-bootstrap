@@ -10,7 +10,7 @@ after_script:
 - codeclimate-test-reporter < lcov.info
 before_install:
 - docker build -t iromain/api-bootstrap .
-- docker login --username="$DOCKER_USERNAME" --password-stdin="$DOCKER_PASSWORD"
+- echo $DOCKER_PASSWORD | docker login --username="$DOCKER_USERNAME" --password-stdin
 - docker push iromain/api-bootstrap
 deploy:
   provider: heroku
