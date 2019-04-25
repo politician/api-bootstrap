@@ -88,11 +88,7 @@ Heroku hosting [![Deployment Status](http://heroku-badge.herokuapp.com/?app=api-
 
 This API is compatible with [Heroku](http://keroku.com) through the [Travis/Heroku integration](http://docs.travis-ci.com/user/deployment/heroku/).
 
-> Create your app on Heroku:
-
-> 1. [Create a new app](https://dashboard.heroku.com/new)
-> 2. In your newly created app settings, create a new config var with key `NODE_ENV` and value `prod`
-
+> [Create a new app](https://dashboard.heroku.com/new) on Heroku:
 
 > Change the Deploy configuration in [.travis.yml](.travis.yml):
 
