@@ -94,7 +94,7 @@ This API is compatible with [Heroku](http://keroku.com) through the [Travis/Hero
 
 > 1. Change your `deploy.app` name
 > 2. Change your `deploy.api_key`
-> Tip: Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) your api key with `travis encrypt <api key>`
+> Tip: Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) your api key with `travis encrypt <api key> --add deploy.api_key`
 
 > Push to GitHub:
 
@@ -109,36 +109,7 @@ A [Docker image](https://hub.docker.com/r/iromain/api-bootstrap/) is automatical
 > Change the Docker image build configuration in [.travis.yml](.travis.yml):
 
 > 1. Change your image repo in `before_install` for both the build and push commands
-> 2. Change your [encrypted](http://docs.travis-ci.com/user/encryption-keys/) docker email, username, password in `env`
-
-Cloud Foundry hosting
---------------
-Cloud Foundry hosting for [this API](http://api-bootstrap.apps.eu01.cf.canopy-cloud.com/documentation) is provided by [Canopy](http://www.canopy-cloud.com)
-This API is compatible with [CloudFoundry](https://www.cloudfoundry.org) through the [Travis/Cloud Foundry integration](http://docs.travis-ci.com/user/deployment/cloudfoundry/).
-
-> Change the Deploy configuration in [.travis.yml](.travis.yml):
-
-> 1. Change your `deploy.organization` name
-> 2. Change your `deploy.space` name
-> 3. Change your `deploy.api`
-> 4. Change your `deploy.username`
-> 5. Change your `deploy.password`
-> Note: For privacy reasons, I decided to encrypt the api endpoint, my username and my password. Use [Travis to encrypt](http://docs.travis-ci.com/user/encryption-keys/) at least your password with `travis encrypt <password> --add deploy.password`
-
-> Push to GitHub:
-
-> 1. Watch the build in Travis
-> 2. Watch the deployment in Cloud Foundry
-> 3. Your API is now available on `https://<app name>.<cloudfoundry domain>/documentation`
-
-
-**Note for Cloud Foundry Docker deployment**
-
-Diego supports docker containers, however as of today it has issues to interpret the command CMD in Dockerfiles. A workaround is to specify manually the start command when pushing.
-
-> Example: 
-> `cf push api-bootstrap -o iromain/api-bootstrap -c "node api.js"`
-
+> 2. Change your [encrypted](http://docs.travis-ci.com/user/encryption-keys/) docker password with `travis encrypt DOCKER_PASSWORD="<docker password>" --add`
 
 New Relic monitoring
 --------------------

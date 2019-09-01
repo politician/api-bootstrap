@@ -18,7 +18,7 @@ deploy:
     secure: gq0EZf+awlwlZbnOg6tR+Xax758QY6BU6kWXkTsd+xcsBZkOnA0ZyVFezza6u72YYvcs18fUZNlPhv3YgK0J4V+3Q2YU56JkFPDVu4udsf+NiEubNeKJgYIZGLR0Ts3PyALZwEorVYkD7kv2Y+amr8k1tRMf+xNb8PeuhRQTYkqLolZRXivQ6IfLAXHbR3FM7HNE+oxHnuWgTnHY9dYYY39BD4wfICARKEL+TuuZ7KWlYEhasSZfbm67YR+lnjflr96d785kBFmOQcWR50fCwaaXP/DcMfJq2rJWPAtZQX9t/4nseRhy7HwUiMowopUCttCK6T3RFbyA7YySScQXJOTxcqA9F8MNnRFmW4rWTARMKkJpBuQLSYnh9u+q9p+aMRDWo5Daw4Rc7bIlyraOg7ijifv+L6ztBsh7sXbxpOa02G69fq2YuAJMYqvrJaumFB8h2kyYuoAAfBkBpAXxLdztma1c3i4lzJTMjMQ941+I5SlpMLQs2wHhD3ydt6DBqkogLgUnkudsITcUPZE5fAAA9gfHr1qFPSsLebXpYb66787Sn9wgfz45xd+TmSB0SRm93FEE40Bd2ECXy/DzKwaIDVzwdg34hkGLfnAiUuOQcB/0hdnDdT7cZPVDmvHm8L4F+1tKmPWKTrQGYP+63HoesNG0De5Qmaj4gMWlRlA=
   app: api-bootstrap
   on:
-    repo: iRomain/api-bootstrap
+    branch: master
 cache:
   directories:
   - node_modules
